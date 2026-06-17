@@ -14,14 +14,16 @@ Example
 >>> dot.render("autograd_graph")
 """
 
-from pathlib import Path
-import sys
 import os
+import sys
+import platform
+from pathlib import Path
 
-os.environ["PATH"] = (
-    r"C:\Program Files\Graphviz\bin;"
-    + os.environ["PATH"]
-)
+if platform.system() == "Windows":
+    os.environ["PATH"] = (
+        r"C:\Program Files\Graphviz\bin;"
+        + os.environ["PATH"]
+    )
 
 import graphviz
 import numpy as np

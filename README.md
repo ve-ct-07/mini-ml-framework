@@ -83,14 +83,32 @@ A larger neural network computation graph can also be generated using the visual
 ## Quick Example
 
 ```python
-from mini_ml.nn import Sequential
+import numpy as np
+from mini_ml.nn import Sequential, Value
 from mini_ml.nn.modules import Linear, ReLU
+from mini_ml.nn.losses import CrossEntropyLoss
+from mini_ml.nn.optimizers import SGD
 
 model = Sequential(
     Linear(784, 128),
     ReLU(),
-    Linear(128, 10)
+    Linear(128, 10),
 )
+
+loss_fn = CrossEntropyLoss()
+optimizer = SGD(model.parameters(), lr=0.01)
+
+# Training loop
+for epoch in range(10):
+    X_val = Value(X_train)
+    logits = model(X_val)
+    loss = loss_fn(logits, y_train)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    print(f"Epoch {epoch+1:>2} | Loss: {float(loss.data):.4f}")
 ```
 
 ---
@@ -100,7 +118,7 @@ model = Sequential(
 Clone the repository:
 
 ```bash
-git clone https://github.com/<username>/mini-ml-framework.git
+git clone https://github.com/ve-ct-07/mini-ml-framework.git
 cd mini-ml-framework
 ```
 

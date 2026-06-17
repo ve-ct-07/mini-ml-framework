@@ -8,8 +8,6 @@ class LeastSquaresClassifier:
     """
 
     def __init__(self):
-        self.w_ = None
-        self.classes_ = None
         self.w_: np.ndarray | None = None
         self.classes_: np.ndarray | None = None
 

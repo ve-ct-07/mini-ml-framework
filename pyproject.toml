@@ -1,0 +1,14 @@
+[project]
+name = "mini-ml-framework"
+version = "1.0.0"
+description = "A mini machine learning framework implemented from scratch using NumPy."
+readme = "README.md"
+requires-python = ">=3.10"
+
+authors = [
+    { name = "P V Charan Teja" }
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

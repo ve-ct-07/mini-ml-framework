@@ -23,3 +23,10 @@ Thumbs.db
 build/
 dist/
 *.egg-info/
+
+# Large datasets
+data/
+
+# Model artifacts
+saved_models/
+*.npz

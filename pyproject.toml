@@ -9,6 +9,22 @@ authors = [
     { name = "P V Charan Teja" }
 ]
 
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "graphviz",
+    "pandas",
+    "scikit-learn"
+]
+
+keywords = [
+    "machine-learning",
+    "deep-learning",
+    "numpy",
+    "autograd",
+    "neural-networks"
+]
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"

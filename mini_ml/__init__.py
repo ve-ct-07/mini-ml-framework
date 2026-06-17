@@ -1,5 +1,5 @@
 """
-my_ml_lib: A foundational machine learning library built using NumPy.
+mini_ml: A foundational machine learning library built using NumPy.
 
 Provides implementations of:
 - Linear Models

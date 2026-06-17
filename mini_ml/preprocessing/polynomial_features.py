@@ -13,7 +13,7 @@ class PolynomialFeatures:
         self,
         degree=2,
         include_bias=True,
-        pure_squares_only=False,  # <-- Added framework option
+        pure_squares_only=False,
     ):
         self.degree = degree
         self.include_bias = include_bias
@@ -50,11 +50,8 @@ class PolynomialFeatures:
                 degree,
             )
             
-            # Filter interaction combinations out if the parameter is true
             if self.pure_squares_only:
                 for comb in raw_combinations:
-                    # An item is a pure degree power only if it contains up to 1 unique feature index
-                    # e.g., () -> bias, (5,) -> linear, (5, 5) -> squared. (5, 6) is skipped.
                     if len(set(comb)) <= 1:
                         combinations.append(comb)
             else:
